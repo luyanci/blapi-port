@@ -1,0 +1,29 @@
+name: Build Package
+
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+
+jobs:
+  builf:
+    name: Build Package
+    runs-on: ubuntu-latest
+    permissions:
+      # 这个权限是为了私有仓库。
+      contents: read
+      # 重要提示：这个权限对于可信发布是必需的。
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pdm-project/setup-pdm@v4
+
+      - name: Build package distributions
+        run: pdm build
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: ./dist/*
