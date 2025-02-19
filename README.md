@@ -6,6 +6,9 @@
 
  移植`bilibili-api-python` 在`17.0.0`后被**移除**的api
 
+[![pdm-managed](https://img.shields.io/endpoint?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2Fpdm-project%2F.github%2Fbadge.json)](https://pdm-project.org)
+[![PyPI](https://img.shields.io/pypi/v/blapi-port?logo=python&logoColor=%23cccccc)](https://pypi.org/project/blapi-port)
+
 </div>
 
 ## 如何使用
