@@ -5,7 +5,7 @@ description = "Some porting functions from the old version of bilibili-api-pytho
 authors = [
     {name = "luyanci", email = "luyancib@qq.com"},
 ]
-dependencies = ["bilibili-api-python>=17.0.0"]
+dependencies = ["bilibili-api-python>=17.1.0"]
 requires-python = ">=3.9"
 readme = "README.md"
 license = {text = "GPLv3"}

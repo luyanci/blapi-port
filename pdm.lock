@@ -5,7 +5,7 @@
 groups = ["default"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:c0b186a71cc24c180d60f1bf266d552d6d7fcf67905bb47f9eabb255d7fe9777"
+content_hash = "sha256:56521d2cbecf45d4a97fb1161a392ed92448381091e777659f35baddbbc64514"
 
 [[metadata.targets]]
 requires_python = ">=3.9"
@@ -42,7 +42,7 @@ files = [
 
 [[package]]
 name = "bilibili-api-python"
-version = "17.1.1"
+version = "17.1.2"
 requires_python = ">=3.9"
 summary = "The fork of module bilibili-api. 哔哩哔哩的各种 API 调用便捷整合（视频、动态、直播等），另外附加一些常用的功能。"
 groups = ["default"]
@@ -61,8 +61,8 @@ dependencies = [
     "yarl~=1.18.3",
 ]
 files = [
-    {file = "bilibili_api_python-17.1.1-py3-none-any.whl", hash = "sha256:87c3e1c73420bf363912f9d73ffafac10ed3414400e3575dd9349c62aa93b3dc"},
-    {file = "bilibili_api_python-17.1.1.tar.gz", hash = "sha256:042d378489b320ba6a3d059bc18574480def7c907e5585d38e381c2b98e7165b"},
+    {file = "bilibili_api_python-17.1.2-py3-none-any.whl", hash = "sha256:c80e09db3eb512f35c9a89443b2839272aa228cd72296bb86f784fad4f934944"},
+    {file = "bilibili_api_python-17.1.2.tar.gz", hash = "sha256:a59ae7efcfee2258af4fe39294dcab6ceeafbb10607a281f759f4049c38cd409"},
 ]
 
 [[package]]
