@@ -10,7 +10,13 @@ from bilibili_api import Credential,login_v2,sync
 from bilibili_api.login_v2 import QrCodeLoginEvents
 from bilibili_api.exceptions import LoginError
 
+photo = None  # 图片的全局变量
+
 start = time.perf_counter()
+qrcode_image = None
+credential = Credential()
+is_destroy = False
+id_ = 0  # 事件 id,用于取消 after 绑定
 
 def login_with_qrcode(root=None) -> Credential:
     """
@@ -25,7 +31,7 @@ def login_with_qrcode(root=None) -> Credential:
 
     global start
     global photo
-    global login_key, qrcode_image
+    global qrcode_image
     global credential
     global id_
     import tkinter
@@ -48,7 +54,7 @@ def login_with_qrcode(root=None) -> Credential:
 
     def update_events():
         global id_
-        global start, credential, is_destroy, login_key
+        global start, credential, is_destroy
         events = sync(qrcode.check_state())
         if events == QrCodeLoginEvents.SCAN:
             log.configure(text="请扫描二维码↑", fg="red", font=big_font)
