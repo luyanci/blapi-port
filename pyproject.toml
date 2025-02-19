@@ -1,6 +1,6 @@
 [project]
 name = "blapi-port"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Some porting functions from the old version of bilibili-api-python"
 authors = [
     {name = "luyanci", email = "luyancib@qq.com"},
@@ -17,3 +17,4 @@ build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
+version = {source = "file", path = "src/blapi_port/__init__.py"}
