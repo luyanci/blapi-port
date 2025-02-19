@@ -1,0 +1,19 @@
+[project]
+name = "blapi-port"
+version = "0.1.0"
+description = "Some porting functions from the old version of bilibili-api-python"
+authors = [
+    {name = "luyanci", email = "luyancib@qq.com"},
+]
+dependencies = ["bilibili-api-python>=17.0.0"]
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "GPLv3"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
