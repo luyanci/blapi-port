@@ -25,8 +25,9 @@
 
  - `login`：登录模块
     - `login_with_qrcode`：扫描二维码登录（linux需要安装`python3-tkinter`）
+    - ``: 扫描TV二维码登录 (blapi_port 特有)
     - `login_with_qrcode_term`： 终端扫码登录
-    - `login_with_tv_qrcode_term`: 终端扫码登录(TV版)
+    - `login_with_tv_qrcode_term`: 终端扫描 TV 二维码登录
 
 可提issue补充/反馈Bug（当然自行移植/修复后PR更好）
 
