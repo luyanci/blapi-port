@@ -6,8 +6,9 @@ Note: 代码来自 旧版本的bilibili_api.login
 
 import sys
 import time
-from bilibili_api import Credential,login_v2,sync
-from bilibili_api.login_v2 import QrCodeLoginEvents
+from bilibili_api import Credential,sync
+from bilibili_api.login_v2 import QrCodeLogin
+from bilibili_api.login_v2 import QrCodeLoginEvents,QrCodeLoginChannel
 from bilibili_api.exceptions import LoginError
 
 photo = None  # 图片的全局变量
@@ -42,7 +43,7 @@ def login_with_qrcode(root=None) -> Credential:
     if root == None:
         root = tkinter.Tk()
     root.title("扫码登录")
-    qrcode = login_v2.QrCodeLogin()
+    qrcode = QrCodeLogin()
     sync(qrcode.generate_qrcode())
     qrcode_image = qrcode.get_qrcode_picture().url.removeprefix("file://")
     photo = PhotoImage(file=qrcode_image)
@@ -98,7 +99,7 @@ def login_with_qrcode_term() -> Credential:
         Credential: 凭据
     """
     
-    qrcode =login_v2.QrCodeLogin()
+    qrcode =QrCodeLogin()
     sync(qrcode.generate_qrcode())
     print(qrcode.get_qrcode_terminal() + "\n")
     while True:
