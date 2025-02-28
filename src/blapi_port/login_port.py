@@ -118,6 +118,37 @@ def login_with_qrcode_term() -> Credential:
             sys.stdout.write("\r 成功！")
             sys.stdout.flush()
             return qrcode.get_credential()
-        time.sleep(1)
+        time.sleep(0.5)
+
+def login_with_tv_qrcode_term() -> Credential:
+    """
+    终端扫描 TV 二维码登录
+
+    Args:
+
+    Returns:
+        Credential: 凭据
+    """
+
+    qrcode=QrCodeLogin(platform=QrCodeLoginChannel.TV)
+    sync(qrcode.generate_qrcode())
+    print(qrcode.get_qrcode_terminal() + "\n")
+    while True:
+        events = sync(qrcode.check_state())
+        if events == QrCodeLoginEvents.SCAN:
+            sys.stdout.write("\r 请扫描二维码↑")
+            sys.stdout.flush()
+        # elif events == QrCodeLoginEvents.CONF: # 根本没捕捉到这个 code
+        #     sys.stdout.write("\r 点下确认啊！")
+        #     sys.stdout.flush()
+        elif events == QrCodeLoginEvents.TIMEOUT:
+            print("二维码过期，请扫新二维码！")
+            sync(qrcode.generate_qrcode())
+            print(qrcode.get_qrcode_terminal() + "\n")
+        elif events == QrCodeLoginEvents.DONE:
+            sys.stdout.write("\r 成功！")
+            sys.stdout.flush()
+            return qrcode.get_credential()
+        time.sleep(0.5)
     
-__all__ = ['login_with_qrcode_term', 'login_with_qrcode']
+__all__ = ['login_with_qrcode_term', 'login_with_tv_qrcode_term','login_with_qrcode']

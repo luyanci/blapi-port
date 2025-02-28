@@ -26,6 +26,7 @@
  - `login`：登录模块
     - `login_with_qrcode`：扫描二维码登录（linux需要安装`python3-tkinter`）
     - `login_with_qrcode_term`： 终端扫码登录
+    - `login_with_tv_qrcode_term`: 终端扫码登录(TV版)
 
 可提issue补充/反馈Bug（当然自行移植/修复后PR更好）
 
